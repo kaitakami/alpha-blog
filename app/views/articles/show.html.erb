@@ -1,0 +1,10 @@
+<br />
+<h1><%= @article.title %></h1>
+<div class="article-details">
+    <p>Author: <%= @article.author %></p>
+    <p>Date: <%= @article.created_at %></p>
+</div>
+<br />
+<p><%= @article.description %></p>
+<%= button_to "Delete Article", article_url(@article), method: :delete, class: "delete-button" %>
+

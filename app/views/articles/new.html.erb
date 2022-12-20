@@ -1,0 +1,21 @@
+<h1>Create a new Article</h1>
+
+<div class="form">
+    <%= form_with model: @article do |form| %>
+    <div class="input-container">
+        <%= form.label :title, "Title" %>
+        <%= form.text_field :title %>
+    </div>
+    <br />
+    <div class="input-container">
+        <%= form.label :description, "Body" %>
+        <%= form.text_area :description %>
+    </div>
+    <br />
+    <div class="input-container">
+        <%= form.label :author, "Author" %>
+        <%= form.text_field :author %>
+    </div>
+    <%= form.submit 'Upload' %>
+    <% end %>
+</div>

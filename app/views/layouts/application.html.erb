@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AlphaBlog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-el nav-title"><%= link_to "Articles", root_path %></li>
+      <li class="nav-el"><%= button_to "New Article", new_article_path, method: :get %></li>
+    </ul>
+  </nav>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  <% if flash[:success] %>
+    <div class="success"><%= flash[:success] %></div>
+  <% end %>
+  <% if flash[:danger] %>
+    <div class="danger"><%= flash[:danger] %></div>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>

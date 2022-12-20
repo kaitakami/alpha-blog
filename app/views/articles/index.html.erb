@@ -1,0 +1,17 @@
+<h1>Welcome to my personal website! 🙋</h1>
+<h3>I'm Takami Kai</h3>
+<p>Highly motivated and detail-oriented individual with a strong passion for startups.</p>
+<br />
+<section>
+    <h2>My articles:</h2>
+    <% @articles.each do |article| %>
+        <div class="article-container">
+            <h3><%= article.title %></h3>
+            <div class="article-details">
+                <p>Author: <%= article.author %></p>
+                <p>Date: <%= article.created_at %></p>
+            </div>
+            <%= button_to "Show article", article_url(article), method: :get %>
+        </div>
+    <% end %>
+</section>
